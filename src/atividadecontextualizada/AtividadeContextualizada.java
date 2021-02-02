@@ -120,6 +120,7 @@ public class AtividadeContextualizada {
                 matriculados++;
             }
         }
+        // fora de todos os loops
         System.out.println("--- ALUNOS ATIVOS E INATIVOS ---");
         System.out.println("ativos : " + ativos);
         System.out.println("inativos : " + inativos);

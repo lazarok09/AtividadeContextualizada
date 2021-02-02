@@ -1,5 +1,6 @@
 package atividadecontextualizada;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -44,17 +45,16 @@ public class AtividadeContextualizada {
                     }
                 }
           
-            // idade, altura e peso.
+            // idade, altura e peso.     
             System.out.print("Digite a idade do aluno (numeros inteiros): ");
             aluno[i].setIdade(s2.nextInt());
-            
+          
             System.out.print("Digite a altura do aluno (m,cm): ");
             aluno[i].setAltura(s2.nextFloat());
             
             System.out.print("Digite o peso do aluno (kg,g): ");
             aluno[i].setPeso(s2.nextFloat());
-              continuar = true;
-              
+            
             /* validarCPF */
             ValidarCpf vcpf = new ValidarCpf();
             while(continuar) {
@@ -94,17 +94,19 @@ public class AtividadeContextualizada {
             System.out.println("\n PRÓXIMO");
             }
             // fora do loop de cadastro
-            System.out.println("CADASTRO CONCLUIDO COM SUCESSO");
+            System.out.println("--CADASTRO CONCLUIDO COM SUCESSO--");
             
             // restante do programa
             System.out.println("MOSTRANDO INFORMAÇÕES DOS ALUNOS");
             
             for (int x = 0; aluno.length > x ; x++) {
                 System.out.println(aluno[x].mostrarInformacoes() + "\n Detalhes do pacote: " + aluno[x].getPacoteDoAluno());
+               
             }
-            // contar os alunos ativos e não ativos
+            // contar os alunos ativos/inativos/matriculados
                 int ativos = 0;
                 int inativos = 0;
+                int matriculados = 0;
             for (int c = 0; aluno.length > c ; c++) {
                 
                 if((aluno[c].getStatus().equals("ativo"))) {  
@@ -113,11 +115,15 @@ public class AtividadeContextualizada {
                 if((aluno[c].getStatus().equals("inativo"))){
                     inativos++;
                 }
+                 if(aluno[c].getNome() != null) {
+                    matriculados++;
+                }
             }
             System.out.println("--- ALUNOS ATIVOS E INATIVOS ---");
             System.out.println("ativos : " + ativos);
             System.out.println("inativos : " + inativos);
+            System.out.println("matriculados : " + matriculados);
     
-     }     
+     }
 }
     

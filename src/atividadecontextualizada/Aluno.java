@@ -19,10 +19,7 @@ public class Aluno {
         pacote.setPacote(pacoteEscolhido);
         pacoteDoAluno = pacote.getPacote();
     }
-
-
- 
-
+    
     public Aluno(String nome, int idade, float altura, float peso, String status, String cpf) {
         this.nome = nome;
         this.idade = idade;

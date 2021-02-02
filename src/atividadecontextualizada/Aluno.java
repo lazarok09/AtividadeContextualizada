@@ -8,9 +8,10 @@ public class Aluno {
     private float peso;
     private String status;
     private String cpf;
-   
+
     private String pacoteDoAluno;
     Pacotes pacote = new Pacotes();
+
     public String getPacoteDoAluno() {
         return pacoteDoAluno;
     }
@@ -19,7 +20,7 @@ public class Aluno {
         pacote.setPacote(pacoteEscolhido);
         pacoteDoAluno = pacote.getPacote();
     }
-    
+
     public Aluno(String nome, int idade, float altura, float peso, String status, String cpf) {
         this.nome = nome;
         this.idade = idade;
@@ -37,18 +38,19 @@ public class Aluno {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
     public String getCpf() {
         return this.cpf;
     }
-    
+
     public void setStatus(String status) {
-        
+
         if (status.equals("ativo")) {
             this.status = "ativo";
         } else if (status.equals("inativo")) {
             this.status = "inativo";
         } else {
-            System.out.println("Valor inválido, escolha inativo ou ativo");  
+            System.out.println("Valor inválido, escolha inativo ou ativo");
         }
     }
 
@@ -87,15 +89,11 @@ public class Aluno {
     protected void setPeso(float peso) {
         this.peso = peso;
     }
+
     // método responsável pra mostrar informações a fim de debugar a aplicação
     public String mostrarInformacoes() {
-        return "Aluno(a){"
-                + " nome = " + this.getNome()
-                + ", status = " + getStatus()
-                + ", cpf = " + this.getCpf()
-                + ", idade = " + this.getIdade()
-                + ", altura = " + this.getAltura()
-                + ", peso = " + this.getPeso()
+        return "Aluno(a){" + " nome = " + this.getNome() + ", status = " + getStatus() + ", cpf = " + this.getCpf()
+                + ", idade = " + this.getIdade() + ", altura = " + this.getAltura() + ", peso = " + this.getPeso()
                 + '}';
     }
 
